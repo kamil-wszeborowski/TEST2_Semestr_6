@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Details";
+}
+
+@model TEST2.Models.ApplicationUser
+
+<h2>@ViewBag.PageTitle</h2>
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>E-mail</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>@Model.FirstName</td>
+                    <td>@Model.LastName</td>
+                    <td>@Model.Email</td>
+                </tr>
+        </tbody>
+    </table>
+</div>
+
+
+

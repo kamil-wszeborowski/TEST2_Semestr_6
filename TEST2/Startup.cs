@@ -47,6 +47,8 @@ namespace TEST2
                 .AddDefaultUI()
                 .AddDefaultTokenProviders();
 
+            services.AddScoped<IApplicationUserRepository, SQLApplicationUserRepository>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

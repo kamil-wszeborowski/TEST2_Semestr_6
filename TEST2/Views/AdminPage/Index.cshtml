@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@model IEnumerable<TEST2.Models.ApplicationUser>
+<!--małpa model  TEST2.Models.ApplicationUser-->
+
+<h1>@ViewBag.PageTitle</h1>
+<h2>Here you can see list of users</h2>
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>E-mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var applicationUser in Model)
+            {
+                <tr>
+                    <td>@applicationUser.FirstName</td>
+                    <td>@applicationUser.LastName</td>
+                    <td>@applicationUser.Email</td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="card-footer text-center">
+                            <a asp-controller="AdminPage" asp-action="details" asp-route-id="@applicationUser.Id" class="btn btn-primary">View</a>
+                            <a asp-controller="AdminPage" asp-action="details" asp-route-id="@applicationUser.Id" class="btn btn-primary">Edit</a>
+                            <a href="@Url.Action("Details","AdminPage", new { id = applicationUser.Id})" class="btn btn-primary">Delete</a>
+                            <!-- <a href="#" class="btn btn-primary">View</a>
+    <a href="#" class="btn btn-primary">Edit</a>
+    <a href="#" class="btn btn-danger">Delete</a>-->
+                        </div>
+                    </td>                    
+                </tr>
+            }
+        </tbody>
+    </table> 
+</div>
+
