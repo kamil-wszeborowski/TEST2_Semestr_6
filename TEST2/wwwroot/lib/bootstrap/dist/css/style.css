@@ -1,3 +1,23 @@
-﻿.btn {
+﻿/*Buttons*/
+.btn {
     width: 75px;
+}
+.table-width {
+    width: 50%;
+}
+.btn-right-class {
+    float: left;
+}
+
+/*Helpers*/
+.w3-ul>li{
+    display:block;
+    padding:10px;
+    margin:10px;
+    border-bottom: solid;
+}
+
+/*Other*/
+.author{
+
 }

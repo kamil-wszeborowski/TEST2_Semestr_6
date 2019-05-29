@@ -7,24 +7,16 @@
 
 <h2>@ViewBag.PageTitle</h2>
 
-<div>
-    <table>
-        <thead>
-            <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>E-mail</th>
-            </tr>
-        </thead>
-        <tbody>
-                <tr>
-                    <td>@Model.FirstName</td>
-                    <td>@Model.LastName</td>
-                    <td>@Model.Email</td>
-                </tr>
-        </tbody>
-    </table>
+<div class="w3-container">
+    @Html.SmallList(@Model.FirstName, Model.LastName, Model.Pesel, Model.DateOfBirth, Model.Email)
 </div>
+<div class="card-footer text-center btn-right-class">
+    <a asp-controller="AdminPage" asp-action="index" asp-route-id="@Model.Id" class="btn btn-primary">Back</a>
+    <a asp-controller="AdminPage" asp-action="edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+    <a asp-controller="AdminPage" asp-action="delete" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
+</div>
+
+<div>@Html.CreatedBy()</div>
 
 
 
