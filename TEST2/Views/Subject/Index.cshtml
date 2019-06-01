@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "Subjects";
+}
+
+@model IEnumerable<Subject>
+
+<h1>@ViewBag.PageTitle</h1>
+<h2>Here you can see list of Subjects</h2>
+
+<div>
+    <table class="table-width">
+        <thead>
+            <tr>
+                <th class="header_font_size">SubjectName</th>
+                <th class="header_font_size">Teacher</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var subject in Model)
+            {
+                <tr>
+                    <td class="child_font_size">@subject.SubjectName</td>
+                    <td class="child_font_size">@subject.TeacherId</td>
+
+                </tr>
+                @if (User.IsInRole("Admin") || User.IsInRole("Teacher"))
+                {
+                    <tr>
+                        <td colspan="3">
+                            <div class="card-footer text-center btn-right-class">
+                                <a asp-controller="Subject" asp-action="details" asp-route-id="@subject.Id" class="btn btn-primary">Students</a>
+                                <a asp-controller="Subject" asp-action="edit" asp-route-id="@subject.Id" class="btn btn-primary">Edit</a>
+                                @if (User.IsInRole("Admin") || User.IsInRole("Teacher"))
+                                {
+                                    <a asp-controller="Subject" asp-action="delete" asp-route-id="@subject.Id" class="btn btn-danger">Delete</a>
+                                }
+                            </div>
+                        </td>
+
+                    </tr>
+                }
+            }
+            @if (User.IsInRole("Admin") || User.IsInRole("Teacher"))
+            {
+                <a asp-controller="Subject" asp-action="create" class="btn btn-danger">Create</a>
+            }
+        </tbody>
+    </table>
+</div>
+
+

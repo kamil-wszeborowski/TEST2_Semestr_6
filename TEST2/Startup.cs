@@ -13,6 +13,7 @@ using TEST2.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TEST2.Models;
+using TEST2.Models.SubjectRepo;
 
 namespace TEST2
 {
@@ -48,6 +49,7 @@ namespace TEST2
                 .AddDefaultTokenProviders();
 
             services.AddScoped<IApplicationUserRepository, SQLApplicationUserRepository>();
+            services.AddScoped<ISubjectRepository,SQLSubjectRepository>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

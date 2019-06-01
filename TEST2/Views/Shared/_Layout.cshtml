@@ -42,6 +42,16 @@
                             }
                         }
                     </li>
+                    <li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            @if (User.IsInRole("Admin") || User.IsInRole("Teacher") || User.IsInRole("Student"))
+                            {
+                                <a asp-area="" asp-controller="Subject" asp-action="Index">Subjects</a>
+                            }
+                        }
+                    </li>
+                    
                 </ul>
                 <partial name="_LoginPartial" />
             </div>

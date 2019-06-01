@@ -4,6 +4,7 @@ using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using TEST2.Models;
+using TEST2.Models.SubjectRepo;
 
 namespace TEST2.Data
 {
@@ -12,9 +13,10 @@ namespace TEST2.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
-
+            
         }
+        // public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
-       // public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<Subject> Subjects { get; set; }
     }
 }

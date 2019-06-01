@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using TEST2.Models;
+using TEST2.Models.Validators;
 
 namespace TEST2.Areas.Identity.Pages.Account
 {
@@ -71,6 +72,7 @@ namespace TEST2.Areas.Identity.Pages.Account
             [Required]
             [DataType(DataType.Text)]
             [Display(Name = "Pesel")]
+            [IsPeselCorrect(nameof(DateOfBirth))]
             public long Pesel { get; set; }
 
             [Required]

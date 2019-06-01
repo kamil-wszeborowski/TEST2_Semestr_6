@@ -13,18 +13,18 @@
     <table class="table-width">
         <thead>
             <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>E-mail</th>
+                <th class="header_font_size">Firstname</th>
+                <th class="header_font_size">Lastname</th>
+                <th class="header_font_size">E-mail</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var applicationUser in Model)
             {
                 <tr>
-                    <td>@applicationUser.FirstName</td>
-                    <td>@applicationUser.LastName</td>
-                    <td>@applicationUser.Email</td>
+                    <td class="child_font_size">@applicationUser.FirstName</td>
+                    <td class="child_font_size">@applicationUser.LastName</td>
+                    <td class="child_font_size">@applicationUser.Email</td>
                 </tr>
                 <tr>
                     <td colspan="3">
